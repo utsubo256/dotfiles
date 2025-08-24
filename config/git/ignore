@@ -1,0 +1,9 @@
+# Vim
+.*.swp
+
+# Editors
+.vscode/
+.idea/
+
+# Node.js
+node_modules/

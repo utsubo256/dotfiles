@@ -1,0 +1,5 @@
+[include]
+    path=conf.d/alias.conf
+    path=conf.d/core.conf
+    path=conf.d/user.conf
+    path=conf.d/local.conf
