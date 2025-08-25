@@ -9,7 +9,7 @@ return {
     },
     lazy = false,
     config = function()
-      vim.keymap.set("n", "<leader>e", "<Cmd>Neotree<CR>")
+      vim.keymap.set("n", "<leader>e", ":Neotree toggle position=left<CR>", { noremap = true, silent = true }) -- focus file explorer
       require("neo-tree").setup({
         close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
         popup_border_style = "NC", -- or "" to use 'winborder' on Neovim v0.11+
