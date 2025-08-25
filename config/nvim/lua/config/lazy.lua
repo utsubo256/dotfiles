@@ -18,4 +18,5 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
   require 'plugins.nord',
+  require 'plugins.neo-tree',
 })
