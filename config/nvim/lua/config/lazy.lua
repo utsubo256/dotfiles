@@ -20,4 +20,5 @@ require("lazy").setup({
   require 'plugins.nord',
   require 'plugins.neo-tree',
   require 'plugins.bufferline', -- a buffer line
+  require 'plugins.lualine', -- a statusline
 })
