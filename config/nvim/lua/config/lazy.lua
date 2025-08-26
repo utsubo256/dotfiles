@@ -21,4 +21,5 @@ require("lazy").setup({
   require 'plugins.neo-tree',
   require 'plugins.bufferline', -- a buffer line
   require 'plugins.lualine', -- a statusline
+  require 'plugins.treesitter', -- a Tree-sitter powered syntax parsing framework
 })
