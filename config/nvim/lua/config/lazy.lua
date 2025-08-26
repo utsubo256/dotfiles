@@ -19,4 +19,5 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   require 'plugins.nord',
   require 'plugins.neo-tree',
+  require 'plugins.bufferline', -- a buffer line
 })
