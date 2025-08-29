@@ -1,0 +1,17 @@
+modmap:
+  - name: Custom mappings
+    remap:
+      CapsLock:
+        held: LeftCtrl
+        alone: Esc
+        free_hold: true
+
+      LeftAlt:
+        held: LeftAlt
+        alone: Muhenkan
+        free_hold: true
+
+      RightAlt:
+        held: RightAlt
+        alone: Henkan
+        free_hold: true
