@@ -34,4 +34,5 @@ require('lazy').setup {
   require 'plugins.vim-fugitive', -- a git integration
   require 'plugins.vim-rhubarb', -- a git integration
   require 'plugins.which-key', -- a keybinding helper
+  require 'plugins.autopairs', -- an automatic pair completion
 }
