@@ -30,4 +30,5 @@ require('lazy').setup {
   require 'plugins.alpha', -- a greeter
   require 'plugins.indent-blankline', -- an indentation guides
   require 'plugins.vim-tmux-navigator', -- a tmux-navigator
+  require 'plugins.vim-sleuth', -- a tabstop/shiftwidth detector
 }
