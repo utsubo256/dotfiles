@@ -24,4 +24,5 @@ require("lazy").setup({
   require 'plugins.treesitter', -- a Tree-sitter powered syntax parsing framework
   require 'plugins.telescope', -- a fuzzy finder
   require 'plugins.lspconfig', -- a configuration helper for Neovim's built-in LSP client
+  require 'plugins.cmp', -- a completion engine
 })
