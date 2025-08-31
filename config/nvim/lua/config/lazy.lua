@@ -29,4 +29,5 @@ require('lazy').setup {
   require 'plugins.gitsigns', -- a git integration
   require 'plugins.alpha', -- a greeter
   require 'plugins.indent-blankline', -- an indentation guides
+  require 'plugins.vim-tmux-navigator', -- a tmux-navigator
 }
