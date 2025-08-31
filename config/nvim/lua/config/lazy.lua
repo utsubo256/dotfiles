@@ -26,4 +26,5 @@ require('lazy').setup {
   require 'plugins.lspconfig', -- a configuration helper for Neovim's built-in LSP client
   require 'plugins.cmp', -- a completion engine
   require 'plugins.none-ls', -- a bridge external formatters/linters into Neovim through the LSP client
+  require 'plugins.gitsigns', -- a git integration
 }
