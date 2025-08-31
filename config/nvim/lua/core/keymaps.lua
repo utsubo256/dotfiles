@@ -9,12 +9,12 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 local ops = { noremap = true, silent = true }
 
 -- save file without auto-formatting
-vim.keymap.set('n', '<Leader>sn', '<cmd>noautocmd w <CR>', ops)
+vim.keymap.set('n', '<leader>ns', '<cmd>noautocmd w<CR>', ops)
 
 -- buffers
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', ops)
 vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', ops)
-vim.keymap.set('n', '<leader>x', ':Bdelete!', ops)
+vim.keymap.set('n', '<leader>x', ':Bdelete!<CR>', ops)
 vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', ops)
 
 -- windows
