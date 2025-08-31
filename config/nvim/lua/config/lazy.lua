@@ -33,4 +33,5 @@ require('lazy').setup {
   require 'plugins.vim-sleuth', -- a tabstop/shiftwidth detector
   require 'plugins.vim-fugitive', -- a git integration
   require 'plugins.vim-rhubarb', -- a git integration
+  require 'plugins.which-key', -- a keybinding helper
 }
