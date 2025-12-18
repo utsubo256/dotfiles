@@ -36,4 +36,5 @@ require('lazy').setup {
   require 'plugins.which-key', -- a keybinding helper
   require 'plugins.autopairs', -- an automatic pair completion
   require 'plugins.colorizer', -- a high-performance color highlighter
+  require 'plugins.image', -- an image supporter
 }
