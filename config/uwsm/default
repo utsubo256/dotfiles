@@ -1,2 +1,2 @@
-export TERMINAL=foot
+export TERMINAL=kitty
 export EDITOR=nvim
