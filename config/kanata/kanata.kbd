@@ -1,0 +1,27 @@
+(defcfg
+  process-unmapped-keys yes
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+)
+
+(defsrc
+  caps
+  lalt ralt
+  lmet
+)
+
+(deflayer base
+  @esc_ctrl
+  @muhenkan_super @henkan_super
+  lalt
+)
+
+(defalias
+  ;; CapsLock: タップでEsc、長押しでLeftCtrl
+  esc_ctrl (tap-hold-press 0 200 esc lctl)
+
+  ;; LeftAlt: タップで無変換、長押しでSuper
+  muhenkan_super (tap-hold-press 0 200 muhenkan lmet)
+
+  ;; RightAlt: タップで変換、長押しでSuper
+  henkan_super (tap-hold-press 0 200 henkan rmet)
+)
