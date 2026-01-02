@@ -42,6 +42,12 @@ vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', ops)
 vim.keymap.set('v', '<', '<gv', ops)
 vim.keymap.set('v', '>', '>gv', ops)
 
+-- insert timestamp
+vim.keymap.set('n', '<leader>now', function()
+  local timestamp = os.date('%Y-%m-%dT%H:%M:%S')
+  vim.api.nvim_put({ timestamp }, 'c', true, true)
+end, { desc = 'Insert current timestamp in ISO 8601 format' })
+
 -- diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })

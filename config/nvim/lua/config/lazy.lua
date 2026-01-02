@@ -37,4 +37,5 @@ require('lazy').setup {
   require 'plugins.autopairs', -- an automatic pair completion
   require 'plugins.colorizer', -- a high-performance color highlighter
   require 'plugins.image', -- an image supporter
+  require 'plugins.telekasten', -- a Zettelkasten helper
 }
