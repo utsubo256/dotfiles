@@ -6,3 +6,6 @@ local.*
 # zsh cache
 *.zwc
 .zcomp*
+
+# tmux plugins (managed by TPM)
+config/tmux/plugins/
