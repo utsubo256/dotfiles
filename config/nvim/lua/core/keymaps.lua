@@ -8,6 +8,8 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- default options for keymaps
 local ops = { noremap = true, silent = true }
 
+-- save file
+vim.keymap.set('n', '<leader>w', '<cmd>w<CR>')
 -- save file without auto-formatting
 vim.keymap.set('n', '<leader>ns', '<cmd>noautocmd w<CR>', ops)
 
