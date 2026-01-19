@@ -44,7 +44,7 @@ vim.keymap.set('v', '>', '>gv', ops)
 
 -- insert timestamp
 vim.keymap.set('n', '<leader>now', function()
-  local timestamp = os.date('%Y-%m-%dT%H:%M:%S')
+  local timestamp = os.date '%Y-%m-%dT%H:%M:%S'
   vim.api.nvim_put({ timestamp }, 'c', true, true)
 end, { desc = 'Insert current timestamp in ISO 8601 format' })
 
