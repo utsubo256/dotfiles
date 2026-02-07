@@ -131,6 +131,7 @@ return {
     -- - settings (table): Override the default settings passed when initializing the server.
     local servers = {
       ts_ls = {},
+      ruby_lsp = {},
       ruff = {},
       pylsp = {
         settings = {
