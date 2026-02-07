@@ -15,6 +15,7 @@ return {
       dailies = schedule_path .. '/dailies',
       weeklies = schedule_path .. '/weeklies',
       templates = base_path .. '/templates',
+      template_new_daily = base_path .. '/templates/daily.md',
 
       tag_notation = '@tag',
 
@@ -40,9 +41,52 @@ return {
     vim.keymap.set('n', '<leader>zg', '<cmd>Telekasten search_notes<CR>')
     vim.keymap.set('n', '<leader>zd', '<cmd>Telekasten goto_today<CR>')
     vim.keymap.set('n', '<leader>zz', '<cmd>Telekasten follow_link<CR>')
-    vim.keymap.set('n', '<leader>zn', '<cmd>Telekasten new_note<CR>')
+    vim.keymap.set('n', '<leader>zn', function()
+      vim.ui.input({ prompt = 'Note title: ' }, function(title)
+        if not title or title == '' then
+          return
+        end
+        local script = base_path .. '/scripts/new-note.sh'
+        local file = vim.fn.system({ script, title }):gsub('%s+$', '')
+        if vim.v.shell_error == 0 then
+          vim.cmd('edit ' .. file)
+        else
+          vim.notify('Note creation failed', vim.log.levels.ERROR)
+        end
+      end)
+    end, { desc = 'New Note' })
     vim.keymap.set('n', '<leader>zc', '<cmd>Telekasten show_calendar<CR>')
     vim.keymap.set('n', '<leader>zb', '<cmd>Telekasten show_backlinks<CR>')
     vim.keymap.set('n', '<leader>zI', '<cmd>Telekasten insert_img_link<CR>')
+
+    -- Project management
+    vim.keymap.set('n', '<leader>zi', function()
+      vim.ui.input({ prompt = 'Issue title: ' }, function(title)
+        if not title or title == '' then
+          return
+        end
+        local script = base_path .. '/scripts/new-issue.sh'
+        local file = vim.fn.system({ script, title }):gsub('%s+$', '')
+        if vim.v.shell_error == 0 then
+          vim.cmd('edit ' .. file)
+        else
+          vim.notify('Issue creation failed', vim.log.levels.ERROR)
+        end
+      end)
+    end, { desc = 'New Issue' })
+    vim.keymap.set('n', '<leader>ze', function()
+      vim.ui.input({ prompt = 'Epic title: ' }, function(title)
+        if not title or title == '' then
+          return
+        end
+        local script = base_path .. '/scripts/new-epic.sh'
+        local file = vim.fn.system({ script, title }):gsub('%s+$', '')
+        if vim.v.shell_error == 0 then
+          vim.cmd('edit ' .. file)
+        else
+          vim.notify('Epic creation failed', vim.log.levels.ERROR)
+        end
+      end)
+    end, { desc = 'New Epic' })
   end,
 }
