@@ -271,6 +271,7 @@ return {
               ['<up>'] = 'move_cursor_up',
               ['<C-p>'] = 'move_cursor_up',
               ['<esc>'] = 'close',
+              ['<CR>'] = 'close_keep_filter',
               ['<S-CR>'] = 'close_keep_filter',
               ['<C-CR>'] = 'close_clear_filter',
               ['<C-w>'] = { '<C-S-w>', raw = true },
