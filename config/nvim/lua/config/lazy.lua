@@ -19,6 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup {
   require 'plugins.nord', -- a colorscheme
   require 'plugins.neo-tree', -- a file manager
+  require 'plugins.oil', -- a buffer-based file manager
   require 'plugins.bufferline', -- a buffer line
   require 'plugins.lualine', -- a statusline
   require 'plugins.treesitter', -- a Tree-sitter powered syntax parsing framework
