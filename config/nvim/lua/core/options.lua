@@ -9,7 +9,7 @@ vim.o.tabstop = 4 -- the number of spaces a real tab character(\t) looks like (d
 vim.o.softtabstop = 4 -- how many spaces pressing <Tab> or <BS> counts as in insert mode. with expandtab=true: pressing <Tab> inserts that many spaces. with expandtab=false: pressing <Tab> may still insert a real \t, but <BS> will treat groups of softtabstop spaces as one unit to delete
 vim.o.expandtab = true -- convert tabs to spaces (default: false)
 vim.o.splitbelow = true -- force all horizontal splits to go below current window. (default: the new window opens above the current one)
-vim.o.hlsearch = false -- set highlight on search (default: true)
+vim.o.hlsearch = true -- set highlight on search (default: true)
 vim.o.showmode = false -- we don't need to see things like -- INSERT -- anymore (default: true)
 vim.o.termguicolors = true -- use 24-bit (true color) mode in the terminal instead of the older 256-color palette (default: false)
 vim.o.numberwidth = 4 -- set the minimum width of the line number column (the gutter where :set number displays line numbers)
@@ -32,3 +32,13 @@ vim.opt.shortmess:append 'c' -- don't give |ins-completion-menu| messages (defau
 vim.opt.iskeyword:append '-' -- hyphenated words recognized by searches (default: does not include '-')
 vim.opt.formatoptions:remove { 'c', 'r', 'o' } -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <ENTER> in insert mode, or hitting 'o' or 'O' in normal mode. (default: 'croql')
 vim.opt.runtimepath:remove '/usr/share/vim/vimfiles' -- separate Vim plugins from Neovim in case Vim still in use (default: includes this path if Vim is installed)
+
+vim.on_key(function(char)
+  if vim.fn.mode() == 'n' then
+    local search_keys = { '<CR>', 'n', 'N', '*', '#', '?', '/' }
+    local new_hlsearch = vim.tbl_contains(search_keys, vim.fn.keytrans(char))
+    if vim.o.hlsearch ~= new_hlsearch then
+      vim.o.hlsearch = new_hlsearch
+    end
+  end
+end, vim.api.nvim_create_namespace('auto_hlsearch'))
