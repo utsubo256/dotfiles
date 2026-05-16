@@ -35,6 +35,7 @@ require('lazy').setup {
   require 'plugins.vim-rails', -- a rails helper
   require 'plugins.vim-fugitive', -- a git integration
   require 'plugins.vim-rhubarb', -- a git integration
+  require 'plugins.gitlinker', -- a git link generator
   require 'plugins.which-key', -- a keybinding helper
   require 'plugins.autopairs', -- an automatic pair completion
   require 'plugins.colorizer', -- a high-performance color highlighter
