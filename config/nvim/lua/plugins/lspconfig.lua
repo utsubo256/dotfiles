@@ -131,7 +131,9 @@ return {
     -- - settings (table): Override the default settings passed when initializing the server.
     local servers = {
       ts_ls = {},
-      ruby_lsp = {},
+      ruby_lsp = {
+        cmd = { 'ruby-lsp' },
+      },
       ruff = {},
       pylsp = {
         settings = {
@@ -187,6 +189,8 @@ return {
       'prettier', -- Used to format html, json, yaml, markdown
       'shfmt', -- Used to format shell scripts
     })
+    -- ruby_lsp is managed by mise/gem, not Mason
+    ensure_installed = vim.tbl_filter(function(s) return s ~= 'ruby_lsp' end, ensure_installed)
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
     for server, cfg in pairs(servers) do
