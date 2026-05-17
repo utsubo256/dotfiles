@@ -45,4 +45,5 @@ require('lazy').setup {
   require 'plugins.telekasten', -- a Zettelkasten helper
   require 'plugins.render-markdown', -- a Markdown helper
   require 'plugins.dap', -- a debug adapter protocol client
+  require 'plugins.nvim-treesitter-context', -- a sticky context displayer
 }
