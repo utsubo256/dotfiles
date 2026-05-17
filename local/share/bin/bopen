@@ -1,0 +1,6 @@
+#!/bin/bash
+eval "$(/usr/bin/mise activate bash)"
+gem=$(bundle list --name-only | fzf --prompt="Select gem: ")
+[[ -z "$gem" ]] && exit 0
+gem_path=$(bundle show "$gem")
+tmux new-window -d -c "$gem_path" -n "$gem" "nvim ."

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# ${variable:-default} => $1 (1st argument) || default
+sec=${1:-30}
+length=${#sec}
+
+for i in $(seq $sec -1 1); do
+    # echo $i
+    printf "\r%${length}d" $i
+    sleep 1
+done
+
+# echo "Done!"
+printf "\rDone!\n"

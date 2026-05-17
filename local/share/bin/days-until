@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# 予定日までの日数を計算するスクリプト
+# Usage: days-until <YYYY-MM-DD>
+
+if [[ -z "$1" ]]; then
+    echo "Usage: days-until <YYYY-MM-DD>" >&2
+    echo "Example: days-until 2026-01-12" >&2
+    exit 1
+fi
+
+target="$1"
+
+# 入力形式の検証
+if ! date -d "$target" &>/dev/null; then
+    echo "Error: Invalid date format. Use YYYY-MM-DD" >&2
+    exit 1
+fi
+
+today=$(date +%s)
+target_sec=$(date -d "$target" +%s)
+
+diff_days=$(( (target_sec - today) / 86400 + 1 ))
+
+echo "$diff_days"

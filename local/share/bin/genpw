@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Usage: genpw [-l <length>] [-n] [-s]
+#   -l  length (default: 32)
+#   -n  exclude numbers
+#   -s  exclude symbols (!@#$%^&*)
+
+len=32
+include_nums=true
+include_syms=true
+
+while getopts "l:ns" opt; do
+  case $opt in
+    l) len="$OPTARG" ;;
+    n) include_nums=false ;;
+    s) include_syms=false ;;
+  esac
+done
+
+chars="A-Za-z"
+$include_nums && chars="${chars}0-9"
+$include_syms && chars="${chars}!@#\$%^&*"
+
+LC_ALL=C tr -dc "$chars" < /dev/urandom | head -c "$len" | wl-copy
+(sleep 30 && wl-copy --clear) &

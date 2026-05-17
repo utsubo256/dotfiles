@@ -1,0 +1,6 @@
+#!/bin/bash
+direction="${1:--h}"
+window_idx=$(tmux list-windows -F '#{window_index}: #{window_name}' | fzf | cut -d: -f1)
+[[ -z "$window_idx" ]] && exit 0
+path=$(tmux display-message -p -t "${window_idx}.1" "#{pane_current_path}")
+tmux split-window "$direction" -c "$path" "nvim ."
