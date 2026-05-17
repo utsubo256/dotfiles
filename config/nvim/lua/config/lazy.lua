@@ -23,7 +23,8 @@ require('lazy').setup {
   require 'plugins.bufferline', -- a buffer line
   require 'plugins.lualine', -- a statusline
   require 'plugins.treesitter', -- a Tree-sitter powered syntax parsing framework
-  require 'plugins.telescope', -- a fuzzy finder
+  -- require 'plugins.telescope', -- a fuzzy finder
+  require 'plugins.fzf-lua', -- a fuzzy finder
   require 'plugins.grug-far', -- a find and replace helper
   require 'plugins.lspconfig', -- a configuration helper for Neovim's built-in LSP client
   require 'plugins.cmp', -- a completion engine
