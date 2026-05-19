@@ -1,5 +1,6 @@
 return {
   'renerocksai/telekasten.nvim',
+  enabled = false,
   dependencies = { 'nvim-telescope/telescope.nvim' },
   config = function()
     local base_path = vim.fn.expand '~/ghq/github.com/utsubo256/zett'

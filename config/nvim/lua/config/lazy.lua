@@ -17,37 +17,8 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require('lazy').setup {
-  require 'plugins.nord', -- a colorscheme
-  -- require 'plugins.neo-tree', -- a file manager
-  require 'plugins.oil', -- a buffer-based file manager
-  -- require 'plugins.bufferline', -- a buffer line
-  require 'plugins.lualine', -- a statusline
-  require 'plugins.treesitter', -- a Tree-sitter powered syntax parsing framework
-  -- require 'plugins.telescope', -- a fuzzy finder
-  require 'plugins.fzf-lua', -- a fuzzy finder
-  require 'plugins.grug-far', -- a find and replace helper
-  require 'plugins.lspconfig', -- a configuration helper for Neovim's built-in LSP client
-  require 'plugins.cmp', -- a completion engine
-  require 'plugins.conform', -- a lightweight yet powerful formatter plugin for Neovim
-  require 'plugins.gitsigns', -- a git integration
-  -- require 'plugins.alpha', -- a greeter
-  require 'plugins.indent-blankline', -- an indentation guides
-  require 'plugins.vim-tmux-navigator', -- a tmux-navigator
-  require 'plugins.vim-sleuth', -- a tabstop/shiftwidth detector
-  require 'plugins.vim-ruby', -- a ruby helper
-  require 'plugins.vim-rails', -- a rails helper
-  require 'plugins.vim-fugitive', -- a git integration
-  require 'plugins.vim-rhubarb', -- a git integration
-  require 'plugins.gitlinker', -- a git link generator
-  require 'plugins.which-key', -- a keybinding helper
-  require 'plugins.autopairs', -- an automatic pair completion
-  require 'plugins.colorizer', -- a high-performance color highlighter
-  require 'plugins.image', -- an image supporter
-  require 'plugins.telekasten', -- a Zettelkasten helper
-  require 'plugins.render-markdown', -- a Markdown helper
-  require 'plugins.dap', -- a debug adapter protocol client
-  require 'plugins.nvim-treesitter-context', -- a sticky context displayer
-  require 'plugins.flash', -- a motion helper
-  require 'plugins.vim-better-whitespace',
-  require 'plugins.diffview', -- a git integration
+  spec = {
+    { import = 'plugins' },
+  },
+  checker = { enabled = true },
 }
