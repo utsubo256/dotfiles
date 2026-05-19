@@ -18,9 +18,9 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require('lazy').setup {
   require 'plugins.nord', -- a colorscheme
-  require 'plugins.neo-tree', -- a file manager
+  -- require 'plugins.neo-tree', -- a file manager
   require 'plugins.oil', -- a buffer-based file manager
-  require 'plugins.bufferline', -- a buffer line
+  -- require 'plugins.bufferline', -- a buffer line
   require 'plugins.lualine', -- a statusline
   require 'plugins.treesitter', -- a Tree-sitter powered syntax parsing framework
   -- require 'plugins.telescope', -- a fuzzy finder
@@ -30,7 +30,7 @@ require('lazy').setup {
   require 'plugins.cmp', -- a completion engine
   require 'plugins.conform', -- a lightweight yet powerful formatter plugin for Neovim
   require 'plugins.gitsigns', -- a git integration
-  require 'plugins.alpha', -- a greeter
+  -- require 'plugins.alpha', -- a greeter
   require 'plugins.indent-blankline', -- an indentation guides
   require 'plugins.vim-tmux-navigator', -- a tmux-navigator
   require 'plugins.vim-sleuth', -- a tabstop/shiftwidth detector
@@ -47,4 +47,7 @@ require('lazy').setup {
   require 'plugins.render-markdown', -- a Markdown helper
   require 'plugins.dap', -- a debug adapter protocol client
   require 'plugins.nvim-treesitter-context', -- a sticky context displayer
+  require 'plugins.flash', -- a motion helper
+  require 'plugins.vim-better-whitespace',
+  require 'plugins.diffview', -- a git integration
 }

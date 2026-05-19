@@ -5,6 +5,11 @@ return {
   ---@type fzf-lua.Config|{}
   ---@diagnostic disable: missing-fields
   opts = {
+    git = {
+      branches = {
+        cmd_add = { "git", "checkout", "-b" }, -- ctrl-a: create + checkout (default: create only)
+      },
+    },
     previewers = {
       builtin = {
         treesitter = {
@@ -43,6 +48,7 @@ return {
     { '<leader><leader>', '<cmd>FzfLua buffers<CR>', desc = 'Find existing buffers' },
     { '<leader>/', '<cmd>FzfLua blines<CR>', desc = '[/] Fuzzily search in current buffer' },
     { '<leader>s/', '<cmd>FzfLua grep_open_buffers<CR>', desc = '[S]earch [/] in Open Files' },
+    { '<leader>gw', '<cmd>FzfLua git_branches<CR>',     desc = 'Git: switch branch' },
     {
       '<leader>sn',
       function()

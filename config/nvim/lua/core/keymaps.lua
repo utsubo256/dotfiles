@@ -16,7 +16,8 @@ vim.keymap.set('n', '<leader>ns', '<cmd>noautocmd w<CR>', ops)
 -- buffers
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', ops)
 vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', ops)
-vim.keymap.set('n', '<leader>x', ':Bdelete!<CR>', ops)
+vim.keymap.set('n', '<leader>x', ':bd<CR>', ops)
+vim.keymap.set('n', '<leader>X', ':%bd<CR>', ops)
 vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', ops)
 
 -- windows

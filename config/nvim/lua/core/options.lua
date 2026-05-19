@@ -14,13 +14,13 @@ vim.o.showmode = false -- we don't need to see things like -- INSERT -- anymore 
 vim.o.termguicolors = true -- use 24-bit (true color) mode in the terminal instead of the older 256-color palette (default: false)
 vim.o.numberwidth = 4 -- set the minimum width of the line number column (the gutter where :set number displays line numbers)
 vim.o.smartindent = true -- make indenting smarter again (default: false)
-vim.o.showtabline = 2 -- always show tablines (default: 1)
+vim.o.showtabline = 0 -- always hide tablines (default: 1)
 vim.o.backspace = 'indent,eol,start' -- allow backspace on (default: 'indent,eol,start')
 vim.o.pumheight = 10 -- pop up menu height (default: 0)
 vim.o.conceallevel = 0 -- so that '' is visible in markdown files (default: 1)
 vim.o.signcolumn = 'yes' -- always reserve one column for signs, to prevent text shifting when signs show up
 vim.o.fileencoding = 'utf-8' -- the encoding written to a file (default: 'utf-8')
-vim.o.cmdheight = 1 -- more space in the Neovim command line for displaying messages (default: 1)
+vim.o.cmdheight = 0 -- hide cmdline when not in use (default: 1)
 vim.o.breakindent = true -- when a long line wraps onto multiple screen lines, the wrapped part will keep the same indentation as the first line (default: false)
 vim.o.updatetime = 250 -- decrease update time (default: 4000)
 vim.o.timeoutlen = 300 -- set the maximum time Neovim waits for the next key in a mapped sequence
@@ -41,4 +41,4 @@ vim.on_key(function(char)
       vim.o.hlsearch = new_hlsearch
     end
   end
-end, vim.api.nvim_create_namespace('auto_hlsearch'))
+end, vim.api.nvim_create_namespace 'auto_hlsearch')
