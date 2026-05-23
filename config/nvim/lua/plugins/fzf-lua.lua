@@ -56,5 +56,6 @@ return {
       end,
       desc = '[S]earch [N]eovim files',
     },
+    { '<leader>sq', '<cmd>FzfLua quickfix<CR>', desc = '[S]earch [Q]uickfix' },
   },
 }

@@ -17,7 +17,16 @@ vim.keymap.set('n', '<leader>ns', '<cmd>noautocmd w<CR>', ops)
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', ops)
 vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', ops)
 vim.keymap.set('n', '<leader>x', ':bd<CR>', ops)
-vim.keymap.set('n', '<leader>X', ':%bd<CR>', ops)
+-- delete all listed buffers by switching to a new empty buffer first
+vim.keymap.set('n', '<leader>X', function()
+  vim.cmd 'enew'
+  local new_buf = vim.api.nvim_get_current_buf()
+  for _, b in ipairs(vim.api.nvim_list_bufs()) do
+    if b ~= new_buf and vim.api.nvim_buf_is_loaded(b) and vim.bo[b].buflisted then
+      vim.cmd('bdelete ' .. b)
+    end
+  end
+end, ops)
 vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', ops)
 
 -- windows
