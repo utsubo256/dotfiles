@@ -50,23 +50,17 @@ return {
         always_divide_middle = true,
         shorting_target = 0,
       },
-      sections = {
-        lualine_a = {},
-        lualine_b = {},
+      sections = {},
+      inactive_sections = {},
+      tabline = {},
+      winbar = {
         lualine_c = { filename },
-        lualine_x = { diagnostics, diff, { 'encoding', cond = hide_in_width }, { 'filetype', cond = hide_in_width } },
-        lualine_y = { 'searchcount', 'location' },
-        lualine_z = {},
+        lualine_x = { diagnostics, diff, { 'encoding', cond = hide_in_width }, { 'filetype', cond = hide_in_width }, 'searchcount', 'location' },
       },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
+      inactive_winbar = {
         lualine_c = { { 'filename', path = 1 } },
         lualine_x = { { 'location', padding = 0 } },
-        lualine_y = {},
-        lualine_z = {},
       },
-      tabline = {},
       extensions = { 'fugitive' },
     }
   end,

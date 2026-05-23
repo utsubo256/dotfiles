@@ -15,6 +15,7 @@ vim.o.termguicolors = true -- use 24-bit (true color) mode in the terminal inste
 vim.o.numberwidth = 4 -- set the minimum width of the line number column (the gutter where :set number displays line numbers)
 vim.o.smartindent = true -- make indenting smarter again (default: false)
 vim.o.showtabline = 0 -- always hide tablines (default: 1)
+vim.o.laststatus = 0 -- hide statusline
 vim.o.backspace = 'indent,eol,start' -- allow backspace on (default: 'indent,eol,start')
 vim.o.pumheight = 10 -- pop up menu height (default: 0)
 vim.o.conceallevel = 0 -- so that '' is visible in markdown files (default: 1)
