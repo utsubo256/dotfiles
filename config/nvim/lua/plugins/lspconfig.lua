@@ -138,7 +138,6 @@ return {
       },
       html = { filetypes = { 'html', 'twig', 'hbs' } },
       cssls = {},
-      tailwindcss = {},
       dockerls = {},
       sqlls = {},
       terraformls = {},
