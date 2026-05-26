@@ -1,0 +1,6 @@
+#!/bin/bash
+selected=$(tmux ls 2>/dev/null | fzf --prompt="switch session> ")
+[[ -z "$selected" ]] && exit 0
+
+session=$(echo "$selected" | awk -F: '{print $1}')
+tmux switch-client -t "$session"
