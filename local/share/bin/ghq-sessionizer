@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+selected=$(ghq list --full-path | fzf --reverse --prompt="new session> ")
+
+[[ -z "$selected" ]] && exit 0
+
+repo_name=$(basename "$selected")
+owner_name=$(basename "$(dirname "$selected")")
+session_name="${owner_name}-${repo_name}"
+
+if ! tmux has-session -t "$session_name" 2>/dev/null; then
+  tmux new-session -ds "$session_name" -c "$selected"
+fi
+
+tmux switch-client -t "$session_name"

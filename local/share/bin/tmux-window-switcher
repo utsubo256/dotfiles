@@ -1,0 +1,5 @@
+#!/bin/bash
+window=$(tmux list-windows -F '#{window_index}: #{window_name}#{?window_active,  (current),}' | fzf --reverse --prompt="switch window> ")
+[[ -z "$window" ]] && exit 0
+window_idx=${window%%:*}
+tmux select-window -t "$window_idx"
